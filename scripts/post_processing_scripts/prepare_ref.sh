@@ -10,13 +10,13 @@ SEG_PATH=$(find $REF_FOLDER_PATH -name "*sc_seg.nii.gz")
 t1w_folder_path=$(dirname $t1w_PATH)
 
 # OUTPUTS
-t1w_SEG_PATH="$t1w_folder_path/T1w_seg.nii.gz"
-t1w_REG_PATH="$t1w_folder_path/T1w_reg.nii.gz"
-t1w_SEG_REG_PATH="$t1w_folder_path/T1w_seg_reg.nii.gz"
-WARP_PATH="$t1w_folder_path/warp_t1w_to_EPI_REF.nii.gz"
+t1w_SEG_PATH=$t1w_folder_path/T1w_seg.nii.gz
+t1w_REG_PATH=$t1w_folder_path/T1w_reg.nii.gz
+t1w_SEG_REG_PATH=$t1w_folder_path/T1w_seg_reg.nii.gz
+WARP_PATH=$t1w_folder_path/warp_t1w_to_EPI_REF.nii.gz
 
 # Get SEG_PATH folder path
-MASK_PATH="$REF_FOLDER_PATH/sc_mask.nii.gz"
+MASK_PATH=$REF_FOLDER_PATH/sc_mask.nii.gz
 
 # Create mask centered around the spinal cord in EPI
 sct_create_mask -i $REF_PATH -p centerline,$SEG_PATH -size 25mm -f cylinder -o $MASK_PATH
