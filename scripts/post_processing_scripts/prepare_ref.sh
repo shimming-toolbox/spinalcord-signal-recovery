@@ -39,10 +39,10 @@ LABELS_SEG_REG_PATH=$t1w_folder_path/labels_seg_reg.nii.gz
 if [ ! -f "$t1w_folder_path/labels.nii.gz" ]; then
     # Create labels
     sct_label_utils -i $t1w_REG_PATH -create-viewer 2:8 -qc $t1w_folder_path/qc -o $LABELS_PATH
-
-    # Register labels
-    sct_apply_transfo -i $LABELS_PATH -d $REF_PATH -w $WARP_PATH -x label -o $LABELS_REG_PATH
 fi
+
+# Register labels
+sct_apply_transfo -i $LABELS_PATH -d $REF_PATH -w $WARP_PATH -x label -o $LABELS_REG_PATH
 
 # Compute segmentation based on registered labels
 sct_label_utils -i  $t1w_SEG_REG_PATH -disc $LABELS_REG_PATH -o $LABELS_SEG_REG_PATH

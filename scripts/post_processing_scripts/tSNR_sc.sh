@@ -30,6 +30,7 @@ sct_fmri_moco -i $EPI_60vol_PATH -g 1 -o $EPI_mc_folder_path -qc $OUTPUT_PATH/qc
 EPI_mc_path=$EPI_mc_folder_path/${FNAME_NO_EXT}_moco.nii.gz
 EPI_mc_mean_path=$EPI_mc_folder_path/${FNAME_NO_EXT}_moco_mean.nii.gz
 mv $EPI_mc_mean_path $OUTPUT_PATH/EPI_mc_mean.nii.gz
+EPI_mc_mean_path=$OUTPUT_PATH/EPI_mc_mean.nii.gz
 
 # Detrend data
 EPI_detrend_path=$TEMP_PATH/EPI_detrend.nii.gz
