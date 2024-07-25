@@ -1,14 +1,29 @@
 #!/bin/bash
 # Compute tSNR in the spinal cord
-# Takes two parameters: the path to the tSNR script and the output path
+# Takes two parameters: the path to the tSNR script and the optimization name
 
 EPI_60vol_PATH=$1
-OUTPUT_PATH=$2
-TEMP_PATH=$OUTPUT_PATH/temp
+OPT_NAME=$2
+EPI_FOLDER_PATH=$(dirname $EPI_60vol_PATH)
+OPT_FOLDER_PATH=$(dirname $EPI_FOLDER_PATH)
+TEMP_PATH=$OPT_FOLDER_PATH/temp
+SEG_FOLDER_PATH=$OPT_FOLDER_PATH/seg
+QC_FOLDER_PATH=$OPT_FOLDER_PATH/qc
+tSNR_OUTPUT_PATH=$OPT_FOLDER_PATH/tSNR
 
 # Create temp directory if it doesn't exist
 if [ ! -d $TEMP_PATH ]; then
   mkdir -p $TEMP_PATH
+fi
+
+# Create Seg directory if it doesn't exist
+if [ ! -d $SEG_FOLDER_PATH ]; then
+  mkdir -p $SEG_FOLDER_PATH
+fi
+
+# Create tSNR directory if it doesn't exist
+if [ ! -d $tSNR_OUTPUT_PATH ]; then
+  mkdir -p $tSNR_OUTPUT_PATH
 fi
 
 # Get file name
@@ -17,23 +32,27 @@ FNAME_NO_EXT="${FNAME%.*}"
 FNAME_NO_EXT="${FNAME_NO_EXT%.*}"
 
 # Compute mean image
-EPI_mean_PATH=$TEMP_PATH/EPI_60vol_mean.nii.gz
+EPI_mean_PATH=$EPI_FOLDER_PATH/${OPT_NAME}EPI_60vol_mean.nii.gz
 fslmaths "$EPI_60vol_PATH" -Tmean $EPI_mean_PATH
 
 # Get mask of the spinal cord
-MASK_PATH=$OUTPUT_PATH/sc_seg.nii.gz
-sct_deepseg -task seg_sc_contrast_agnostic -i $EPI_mean_PATH -o $MASK_PATH -qc $OUTPUT_PATH/qc
+MASK_PATH=$SEG_FOLDER_PATH/sc_seg.nii.gz
+sct_deepseg -task seg_sc_contrast_agnostic -i $EPI_mean_PATH -o $MASK_PATH -qc $QC_FOLDER_PATH
 
 # Apply motion correction
-EPI_mc_folder_path=$TEMP_PATH/EPI_moco
-sct_fmri_moco -i $EPI_60vol_PATH -g 1 -o $EPI_mc_folder_path -qc $OUTPUT_PATH/qc -qc-seg $MASK_PATH -x nn
+EPI_mc_folder_path=$EPI_FOLDER_PATH/MOCO
+sct_fmri_moco -i $EPI_60vol_PATH -g 1 -o $EPI_mc_folder_path -qc $QC_FOLDER_PATH -qc-seg $MASK_PATH -x nn
 EPI_mc_path=$EPI_mc_folder_path/${FNAME_NO_EXT}_moco.nii.gz
 EPI_mc_mean_path=$EPI_mc_folder_path/${FNAME_NO_EXT}_moco_mean.nii.gz
-mv $EPI_mc_mean_path $OUTPUT_PATH/EPI_mc_mean.nii.gz
-EPI_mc_mean_path=$OUTPUT_PATH/EPI_mc_mean.nii.gz
+
+mv $EPI_mc_mean_path $EPI_FOLDER_PATH/${OPT_NAME}_EPI_mc_mean.nii.gz
+EPI_mc_mean_path=$EPI_FOLDER_PATH/${OPT_NAME}_EPI_mc_mean.nii.gz
+
+mv $EPI_mc_path $EPI_FOLDER_PATH/${OPT_NAME}_EPI_mc.nii.gz
+EPI_mc_path=$EPI_FOLDER_PATH/${OPT_NAME}_EPI_mc.nii.gz
 
 # Detrend data
-EPI_detrend_path=$TEMP_PATH/EPI_detrend.nii.gz
+EPI_detrend_path=$TEMP_PATH/${OPT_NAME}_EPI_detrend.nii.gz
 detrend_file=$TEMP_PATH/detrend_1st_order.con
 Ntp=$(fslnvols $EPI_mc_path)
 awk -v Ntp="$Ntp" 'BEGIN { for (i = 1; i <= Ntp; i++) printf "1 \t %3d\n", i; }' > $detrend_file
@@ -44,5 +63,5 @@ EPI_std_path=$TEMP_PATH/EPI_std.nii.gz
 fslmaths "$EPI_detrend_path" -Tstd $EPI_std_path
 
 # Compute tSNR
-tSNR_PATH=$OUTPUT_PATH/tSNR.nii.gz
+tSNR_PATH=$tSNR_OUTPUT_PATH/${OPT_NAME}_tSNR.nii.gz
 fslmaths $EPI_mc_mean_path -div $EPI_std_path $tSNR_PATH
