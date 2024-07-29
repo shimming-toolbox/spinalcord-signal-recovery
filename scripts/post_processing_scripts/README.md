@@ -1,5 +1,6 @@
 Post-processing scripts for analysis
-*** Make sure you are in the repo before starting
+
+*** Make sure you are in the repo before starting ***
 
 # How to run
 1. Download the data (from the release and add the folder to the repo (spinalcord-signal-recovery/data)
