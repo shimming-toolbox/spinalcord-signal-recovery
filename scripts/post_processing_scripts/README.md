@@ -10,9 +10,9 @@ Post-processing scripts for analysis
   ```
 2. Run `tSNR_sc.sh` to compute tSNR maps for each shimming optimization
   ```
-  ./tSNR_sc.sh ../../data/Baseline/EPIs/Baseline_EPI_60vol.nii.gz Baseline
-  ./tSNR_sc.sh ../../data/DynShim/EPIs/DynShim_EPI_60vol.nii.gz DynShim
-  ./tSNR_sc.sh ../../data/SigRec/EPIs/SigRec_EPI_60vol.nii.gz SigRec
+  ./tSNR_sc.sh ../../data/acdc_241/Baseline/EPIs/Baseline_EPI_60vol.nii.gz Baseline
+  ./tSNR_sc.sh ../../data/acdc_241/DynShim/EPIs/DynShim_EPI_60vol.nii.gz DynShim
+  ./tSNR_sc.sh ../../data/acdc_241/SigRec/EPIs/SigRec_EPI_60vol.nii.gz SigRec
   ```
 3. Run `prepare_ref.sh` to compute and register the mask used for analysis. We use the dynamic shimming acquisition as a reference as it should be the least distorted EPI.
   ```
