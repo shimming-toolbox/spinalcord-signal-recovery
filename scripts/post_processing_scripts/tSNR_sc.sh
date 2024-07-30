@@ -39,9 +39,15 @@ fslmaths "$EPI_60vol_PATH" -Tmean $EPI_mean_PATH
 MASK_PATH=$SEG_FOLDER_PATH/sc_seg.nii.gz
 sct_deepseg -task seg_sc_contrast_agnostic -i $EPI_mean_PATH -o $MASK_PATH -qc $QC_FOLDER_PATH
 
+# Create mask centered around the spinal cord in EPI
+MOCO_MASK_PATH=$SEG_FOLDER_PATH/sc_mask.nii.gz
+sct_create_mask -i $EPI_mean_PATH -p centerline,$MASK_PATH -size 25mm -f cylinder -o $MOCO_MASK_PATH
+
 # Apply motion correction
 EPI_mc_folder_path=$EPI_FOLDER_PATH/MOCO
-sct_fmri_moco -i $EPI_60vol_PATH -g 1 -o $EPI_mc_folder_path -qc $QC_FOLDER_PATH -qc-seg $MASK_PATH -x nn
+sct_fmri_moco -i $EPI_60vol_PATH -g 1 -o $EPI_mc_folder_path -qc $QC_FOLDER_PATH -qc-seg $MOCO_MASK_PATH -m $MOCO_MASK_PATH \
+    -param poly=0,smooth=0,gradStep=1,sampling=None,numTarget=0,iterAvg=1
+
 EPI_mc_path=$EPI_mc_folder_path/${FNAME_NO_EXT}_moco.nii.gz
 EPI_mc_mean_path=$EPI_mc_folder_path/${FNAME_NO_EXT}_moco_mean.nii.gz
 

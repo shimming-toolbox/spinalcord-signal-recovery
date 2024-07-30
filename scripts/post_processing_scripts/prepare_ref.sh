@@ -5,7 +5,7 @@
 REF_FOLDER_PATH=$1
 t1w_PATH=$2
 
-TARGET_PATH=$(find $REF_FOLDER_PATH -name "*_mc_mean.nii.gz")
+TARGET_PATH=$(find $REF_FOLDER_PATH/EPIs -name "*_mc_mean.nii.gz")
 SEG_PATH=$(find $REF_FOLDER_PATH -name "*sc_seg.nii.gz")
 t1w_folder_path=$(dirname $t1w_PATH)
 
