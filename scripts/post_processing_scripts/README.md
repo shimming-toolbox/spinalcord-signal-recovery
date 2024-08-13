@@ -12,7 +12,7 @@ Post-processing scripts for analysis
 ### If you want to run everything at once
 3.1 Run the main script for every subject
   ```
-  ./run_all.sh <../../data/acdc_241>
+  ./run_all.sh ../../data/acdc_241
   ```
 
 ### If you want to run every script separately:
