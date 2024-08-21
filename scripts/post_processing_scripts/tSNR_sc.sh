@@ -32,8 +32,8 @@ FNAME_NO_EXT="${FNAME%.*}"
 FNAME_NO_EXT="${FNAME_NO_EXT%.*}"
 
 # Compute mean image
-EPI_mean_PATH=$EPI_FOLDER_PATH/${OPT_NAME}EPI_60vol_mean.nii.gz
-fslmaths "$EPI_60vol_PATH" -Tmean $EPI_mean_PATH
+EPI_mean_PATH="${EPI_FOLDER_PATH}/${OPT_NAME}_EPI_60vol_mean.nii.gz"
+fslmaths $EPI_60vol_PATH -Tmean $EPI_mean_PATH
 
 # Get mask of the spinal cord
 MASK_PATH=$SEG_FOLDER_PATH/sc_seg.nii.gz
@@ -54,8 +54,8 @@ EPI_mc_mean_path=$EPI_mc_folder_path/${FNAME_NO_EXT}_moco_mean.nii.gz
 mv $EPI_mc_mean_path $EPI_FOLDER_PATH/${OPT_NAME}_EPI_mc_mean.nii.gz
 EPI_mc_mean_path=$EPI_FOLDER_PATH/${OPT_NAME}_EPI_mc_mean.nii.gz
 
-mv $EPI_mc_path $EPI_FOLDER_PATH/${OPT_NAME}_EPI_mc.nii.gz
-EPI_mc_path=$EPI_FOLDER_PATH/${OPT_NAME}_EPI_mc.nii.gz
+mv $EPI_mc_path $EPI_FOLDER_PATH/${OPT_NAME}_EPI_60vol_mc.nii.gz
+EPI_mc_path=$EPI_FOLDER_PATH/${OPT_NAME}_EPI_60vol_mc.nii.gz
 
 # Detrend data
 EPI_detrend_path=$TEMP_PATH/${OPT_NAME}_EPI_detrend.nii.gz
