@@ -33,4 +33,4 @@ sct_apply_transfo -i $tSNR_PATH -d $REF_EPI_PATH -w $WARP_PATH -x linear -o $tSN
 sct_extract_metric -i $tSNR_REG_PATH -f $t1w_SEG_REG_PATH -method wa -perslice 0 -o $MEAN_tSNR_PATH
 
 # Compute tSNR per level
-sct_extract_metric -i $tSNR_REG_PATH -f $t1w_SEG_REG_PATH -method wa -vertfile $LABELS_PATH -perlevel 1 -vert 2:8 -o $tSNR_PER_LEVEL_PATH
+sct_extract_metric -i $tSNR_REG_PATH -f $t1w_SEG_REG_PATH -method wa -vertfile $LABELS_PATH -perlevel 1 -vert 1:15 -o $tSNR_PER_LEVEL_PATH

@@ -59,7 +59,7 @@ LABELS_REG_PATH=$LABELS_FOLDER_PATH/labels_reg.nii.gz
 LABELS_SEG_REG_PATH=$LABELS_FOLDER_PATH/labels_seg_reg.nii.gz
 if [ ! -f $LABELS_PATH ]; then
     # Create labels
-    sct_label_utils -i $t1w_REG_PATH -create-viewer 2:8 -qc $t1w_folder_path/qc -o $LABELS_PATH
+    sct_label_utils -i $t1w_PATH -create-viewer 1:15 -qc $t1w_folder_path/qc -o $LABELS_PATH
 fi
 
 # Register labels

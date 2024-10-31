@@ -1,5 +1,6 @@
 # Custom
 data/
+data_save/
 *.DS_Store
 
 # Byte-compiled / optimized / DLL files
