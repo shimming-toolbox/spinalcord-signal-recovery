@@ -145,9 +145,6 @@ if [ ! -d $OUTPUT_DIR ]; then
     mkdir $OUTPUT_DIR
 fi
 
-
-cp "${FIELDMAP_JSON_PATH}" "${PATH_OUTPUT_STATIC_012_DELTA_PI}/fieldmap_calculated_shim.json"
-
 for w in 0 0.0001 0.01 1
 do
     OUTPUT_DIR="${OPTI_OUTPUT_DIR}/dynamic_shim_${w}GZ"
