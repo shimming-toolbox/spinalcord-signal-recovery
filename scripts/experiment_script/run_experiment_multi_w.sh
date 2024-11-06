@@ -145,7 +145,7 @@ if [ ! -d $OUTPUT_DIR ]; then
     mkdir $OUTPUT_DIR
 fi
 
-for w in 0 0.01
+for w in 0 0.0001 0.01 1
 do
     OUTPUT_DIR="${OPTI_OUTPUT_DIR}/dynamic_shim_${w}GZ"
     st_b0shim dynamic \
