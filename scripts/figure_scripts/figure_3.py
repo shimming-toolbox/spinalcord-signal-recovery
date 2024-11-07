@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import nibabel as nib
-from shimmingtoolbox.coils.coordinates import resample_from_to
+from nibabel.processing import resample_from_to
 from scipy.ndimage import center_of_mass
 import os
 

@@ -2,7 +2,7 @@ import nibabel as nib
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.ndimage import center_of_mass
-from shimmingtoolbox.coils.coordinates import resample_from_to
+from nibabel.processing import resample_from_to
 import os
 
 def crop_center(data, center, size):
