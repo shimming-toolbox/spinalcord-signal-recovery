@@ -13,7 +13,7 @@ conda activate <name_of_your_env>
 ```
 3. Download the data available on [OSF](https://osf.io/rs6tv/)
 4. Place the unzipped data folder in this folder (spinalcord-signal-recovery) <br>
-5. Download Shimming Toolbox's v1.1 <link>
+5. Download [Shimming Toolbox's v1.1](https://github.com/shimming-toolbox/shimming-toolbox/releases/tag/1.1)
 6. Download [SCT v6.3](https://github.com/spinalcordtoolbox/spinalcordtoolbox/releases/tag/6.3)
 
 
