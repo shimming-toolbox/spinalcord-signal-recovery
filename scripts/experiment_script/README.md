@@ -2,7 +2,7 @@
 ### How to run
 1. Change the directory to this folder
 ```
-cd ./scripts/experiment_scripts/
+cd ./scripts/experiment_script/
 ```
 2. For subjects 1 to 5 only 2 w parameters were simulated
 ```
