@@ -3,7 +3,15 @@ Scripts for signal recovery analysis in the spinal cord used in this paper: <ins
 
 ### Before starting
 Before using these scripts, you need to:
-1. Create a conda environment using the env.yml file
+1. Clone the GitHub repository
+```
+git clone https://github.com/4rnaudB/spinalcord-signal-recovery.git
+```
+2. Move to the repository
+```
+cd spinalcord-signal-recovery
+```
+3. Create a conda environment using the env.yml file
 ```
 conda env create -n <name_of_your_env> -f env.yml
 ```
