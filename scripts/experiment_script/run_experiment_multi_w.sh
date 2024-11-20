@@ -20,9 +20,6 @@ dicoms
 It takes three arguments:
 1. The path to the dicoms directory
 2. The name / tag of the subject
-
-Don't forget to change the global variables to match your setup and activate shimming-toolbox's conda
-environement before running the script.
 "
 
 SCRIPT_DIR=$(dirname "$(realpath "$0")")
@@ -45,7 +42,7 @@ SUBJECT_NAME=$2
 
 OUTPUT_PATH="${DICOMS_PATH%/*}/sub-$SUBJECT_NAME/"
 SORTED_DICOMS_PATH="${DICOMS_PATH%/*}/sorted_dicoms_opt/"
-COIL_NAME=$(jq -r '.name' $COIL_CONFIG_PATH)
+COIL_NAME=$(grep '"name"' "$COIL_CONFIG_PATH" | sed -E 's/.*"name": *"([^"]+)".*/\1/')
 echo NAME: $COIL_NAME
 # Sorting dicoms
 echo "Sorting dicoms"
