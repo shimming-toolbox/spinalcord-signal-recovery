@@ -56,6 +56,8 @@ mask = segmentation.astype(bool)
 
 # Plot EPI images and segmentation
 slices = [5, 24]
+vmin = 0
+vmax = 200
 for slice in slices:
     fig, axes = plt.subplots(2, 5, figsize=(20, 8))
     center = center_of_mass(mask[:, :, slice])
@@ -66,12 +68,12 @@ for slice in slices:
         contour_crop = crop_center(mask[:, :, slice], center, 32)
         
         ax_ap = axes[0, i]
-        ax_ap.imshow(epi_ap.T, cmap='gray', origin='lower', vmin=0, vmax=200)
+        ax_ap.imshow(epi_ap.T, cmap='gray', origin='lower', vmin=vmin, vmax=vmax)
         ax_ap.contour(contour_crop.T, colors='red')
         ax_ap.axis('off')
         
         ax_pa = axes[1, i]
-        ax_pa.imshow(epi_pa.T, cmap='gray', origin='lower', vmin=0, vmax=200)
+        ax_pa.imshow(epi_pa.T, cmap='gray', origin='lower', vmin=vmin, vmax=vmax)
         ax_pa.contour(contour_crop.T, colors='red')
         ax_pa.axis('off')
 
