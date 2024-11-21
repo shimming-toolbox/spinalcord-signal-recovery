@@ -23,6 +23,7 @@ conda activate <name_of_your_env>
 4. Place the unzipped data folder in this folder (spinalcord-signal-recovery) <br>
 5. Download [Shimming Toolbox's v1.1](https://github.com/shimming-toolbox/shimming-toolbox/releases/tag/1.1)
 6. Download [SCT v6.3](https://github.com/spinalcordtoolbox/spinalcordtoolbox/releases/tag/6.3)
+7. Download [FSL](https://fsl.fmrib.ox.ac.uk/fsl/docs/#/install/index)
 
 
 ### How to use
