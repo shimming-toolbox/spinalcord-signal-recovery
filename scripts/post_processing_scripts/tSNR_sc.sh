@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script computes the tSNR of a 60 volumes EPI image
+# This script computes the tSNR of a 60 volume EPI image
 #
 # Takes two parameters:
 # 1. The path to the 60 volumes EPI image
@@ -8,7 +8,7 @@
 # Outputs:
 # - Mean image of the EPI
 # - Mask of the spinal cord
-# - Mask centered around the spinal cord in EPI
+# - Mask centred around the spinal cord in EPI
 # - Motion corrected EPI
 # - Detrended EPI
 # - Standard deviation of the EPI
