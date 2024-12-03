@@ -1,5 +1,5 @@
 # spinalcord-signal-recovery
-Scripts for signal recovery analysis in the spinal cord used in this paper <insert links> </br>
+Scripts for signal recovery analysis in the spinal cord</br>
 *NOTE* -- The bash scripts can only be run on Unix-based operating systems.
 ### Before starting
 Before using these scripts, you need to:
