@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
+# This script generates Figure 7 of the paper
+
 # Get the directory of the script being run
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_path = os.path.join(script_dir, '../../data/mutli_w_subject_6_tSNR_data.csv')

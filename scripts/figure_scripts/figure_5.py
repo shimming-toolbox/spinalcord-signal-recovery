@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 from scipy.ndimage import center_of_mass
 import os
 
+# This script generates Figure 5 of the paper
+
 def crop_center(data, center, size):
     """
     Crops a square region around the center of the data.
@@ -22,7 +24,6 @@ def crop_center(data, center, size):
     col_start = max(0, col - half_size)
     col_end = min(data.shape[1], col + half_size)
     return data[row_start:row_end, col_start:col_end]
-
 
 # Load data
 script_dir = os.path.dirname(os.path.abspath(__file__))

@@ -7,6 +7,8 @@ import pandas as pd
 from scipy.stats import mannwhitneyu
 import os
 
+# This script generates Figure 8 of the paper
+
 def load_subject_data(subject_paths, name):
     mask_img = nib.load(subject_paths["mask_path"])
     fm_imgs = [nib.load(fm_path) for fm_path in subject_paths["fm_paths"]]

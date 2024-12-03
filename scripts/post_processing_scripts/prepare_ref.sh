@@ -1,6 +1,15 @@
 #!/bin/bash
 # Compute mask used for analysis and register it to a reference EPI image
 # Takes two parameters: the path to the reference EPI image and the path to the T1w image
+# Outputs:
+# - T1w segmentation
+# - T1w registered to EPI
+# - T1w segmentation registered to EPI
+# - Warp field from T1w to EPI
+# - Labels
+# - Labels registered to EPI
+# - Labels segmentation registered to EPI
+# - Labeled mask based on vertebral levels
 
 REF_FOLDER_PATH=$1
 t1w_PATH=$2

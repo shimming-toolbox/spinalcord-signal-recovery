@@ -1,3 +1,15 @@
+# This script runs all tSNR post-processing scripts for a given subject
+# Inputs:
+# $1: The path to the subject folder
+# Outputs:
+# - tSNR maps for all shim options
+# - Registered tSNR maps
+# - Mean tSNR maps
+# - tSNR per level maps
+# - Reference files
+# - QC files
+#
+
 SUBJECT_PATH=$1
 
 # Get the full path of the script

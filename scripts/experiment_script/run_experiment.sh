@@ -17,9 +17,13 @@ dicoms
 |    └── ...
 
 
-It takes three arguments:
+It takes two arguments:
 1. The path to the dicoms directory
 2. The name / tag of the subject
+
+Outputs:
+- Directory with the nifti files (sub-<subject_name>)
+It includes all niftis and optimization files (currents for the coil, predicted B0 field, etc.)
 "
 
 SCRIPT_DIR=$(dirname "$(realpath "$0")")

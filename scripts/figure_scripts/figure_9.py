@@ -6,6 +6,8 @@ from nibabel.processing import resample_from_to as nib_resample_from_to
 import pandas as pd
 import os
 
+# This script generates Figure 9 of the paper
+
 def load_subject_data(subject_paths, name):
     mask_img = nib.load(subject_paths["mask_path"])
     fm_imgs = [nib.load(fm_path) for fm_path in subject_paths["fm_paths"]]

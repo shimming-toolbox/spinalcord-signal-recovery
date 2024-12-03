@@ -5,6 +5,9 @@ from scipy.ndimage import center_of_mass
 from nibabel.processing import resample_from_to
 import os
 
+# This script generates Figure 4 of the paper
+
+
 def crop_center(data, center, size):
     """
     Crops a square region around the center of the data.
