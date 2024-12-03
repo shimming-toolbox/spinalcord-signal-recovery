@@ -1,5 +1,5 @@
 #!/bin/bash
-# Compute mask used for analysis and register it to a reference EPI image
+# Compute the mask used for analysis and register it to a reference EPI image
 # Takes two parameters: the path to the reference EPI image and the path to the T1w image
 # Outputs:
 # - T1w segmentation
