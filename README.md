@@ -1,29 +1,41 @@
 # spinalcord-signal-recovery
-Scripts for signal recovery analysis in the spinal cord used in this paper: <insert links>
-
+Scripts for signal recovery analysis in the spinal cord used in this paper <insert links> </br>
+*NOTE* -- The bash scripts can only be run on Unix-based operating systems.
 ### Before starting
 Before using these scripts, you need to:
-1. Clone the GitHub repository
+1. Install dependencies
+* [Shimming Toolbox's v1.1](https://github.com/shimming-toolbox/shimming-toolbox/releases/tag/1.1)
 ```
+git clone -b 1.1 https://github.com/shimming-toolbox/shimming-toolbox/ ~/shimming-toolbox/
+cd ~/shimming-toolbox/
+make install
+```
+* [SCT v6.3](https://github.com/spinalcordtoolbox/spinalcordtoolbox/releases/tag/6.3)
+```
+git clone -b 6.3 https://github.com/spinalcordtoolbox/spinalcordtoolbox/ ~/spinalcordtoolbox/
+cd ~/spinalcordtoolbox/
+./install_sct
+```
+* [FSL](https://fsl.fmrib.ox.ac.uk/fsl/docs/#/install/index) (follow instructions on their website)
+2. Clone the GitHub repository
+```
+cd <path_to_where_you_want_the_repository>
 git clone https://github.com/4rnaudB/spinalcord-signal-recovery.git
 ```
-2. Move to the repository
+3. Move to the repository
 ```
 cd spinalcord-signal-recovery
 ```
-3. Create a conda environment using the env.yml file
+4. Create a conda environment using the env.yml file
 ```
 conda env create -n <name_of_your_env> -f env.yml
 ```
-2. Activate the new environment
+5. Activate the new environment
 ```
 conda activate <name_of_your_env>
 ```
 3. Download the data available on [OSF](https://osf.io/rs6tv/)
 4. Place the unzipped data folder in this folder (spinalcord-signal-recovery) <br>
-5. Download [Shimming Toolbox's v1.1](https://github.com/shimming-toolbox/shimming-toolbox/releases/tag/1.1)
-6. Download [SCT v6.3](https://github.com/spinalcordtoolbox/spinalcordtoolbox/releases/tag/6.3)
-7. Download [FSL](https://fsl.fmrib.ox.ac.uk/fsl/docs/#/install/index)
 
 
 ### How to use
