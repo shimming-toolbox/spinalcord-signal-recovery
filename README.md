@@ -35,7 +35,8 @@ conda env create -n <name_of_your_env> -f env.yml
 conda activate <name_of_your_env>
 ```
 3. Download the data available on [OSF](https://osf.io/rs6tv/)
-4. Place the unzipped data folder in this folder (spinalcord-signal-recovery) <br>
+4. Place the unzipped data folder in this folder (spinalcord-signal-recovery)
+* Note that the outputs are already provided in this folder.
 
 
 ### How to use
