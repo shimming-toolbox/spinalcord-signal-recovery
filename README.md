@@ -7,7 +7,7 @@ Before using these scripts, you need to:
 * [Anaconda or Miniconda](https://www.anaconda.com/download/success)
 * [Shimming Toolbox's v1.1](https://github.com/shimming-toolbox/shimming-toolbox/releases/tag/1.1)
 ```
-git clone -b 1.1 https://github.com/shimming-toolbox/spinalcord-signal-recovery.git ~/shimming-toolbox/
+git clone -b 1.1 https://github.com/shimming-toolbox/shimming-toolbox/ ~/shimming-toolbox/
 cd ~/shimming-toolbox/
 make install
 ```
@@ -21,7 +21,7 @@ cd ~/spinalcordtoolbox/
 2. Clone the GitHub repository
 ```
 cd <path_to_where_you_want_the_repository>
-git clone https://github.com/4rnaudB/spinalcord-signal-recovery.git
+git clone https://github.com/shimming-toolbox/spinalcord-signal-recovery.git
 ```
 3. Move to the repository
 ```
