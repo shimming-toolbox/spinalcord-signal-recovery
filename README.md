@@ -1,7 +1,15 @@
 # spinalcord-signal-recovery
-Scripts for signal recovery analysis in the spinal cord</br>
-*NOTE* -- The bash scripts can only be run on Unix-based operating systems.
+
+This repository includes a collection of scripts that were used to analyze the MRI data and generate figures for the article "Breheret et al. Impact of through-slice gradient optimization for dynamic slice-wise shimming in the cervico-thoracic spinal cord (in revision)".
+
+> [!NOTE]  
+> The bash scripts can only be run on Unix-based operating systems.
+
+Citation:
+```Coming soon```
+
 ### Before starting
+
 Before using these scripts, you need to:
 1. Install dependencies
 * [Anaconda or Miniconda](https://www.anaconda.com/download/success)
@@ -41,7 +49,8 @@ conda activate <name_of_your_env>
 
 
 ### How to use
+
 Navigate to the different script folders for specific instructions on how to run the different scripts. 
-* Experiment scripts are scripts used at the scanner during the acquisition to obtain the shimming coefficients
-* Post-processing scripts are the scripts used to process the data into tSNR measurements
-* Figure scripts are the different scripts used to create the paper's figures.
+* [experiment_script](https://github.com/shimming-toolbox/spinalcord-signal-recovery/tree/main/scripts/experiment_script): These scripts are used at the scanner during the acquisition to obtain the shimming coefficients
+* [post_processing_scripts](https://github.com/shimming-toolbox/spinalcord-signal-recovery/tree/main/scripts/post_processing_scripts): Process the data to generatetSNR measurements
+* [figure_scripts](https://github.com/shimming-toolbox/spinalcord-signal-recovery/tree/main/scripts/figure_scripts): Generate figures for the paper
