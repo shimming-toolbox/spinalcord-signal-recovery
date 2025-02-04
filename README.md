@@ -1,6 +1,6 @@
 # spinalcord-signal-recovery
 
-This repository includes a collection of scripts that were used to analyse the MRI data and generate figures for the article "Bréhéret et al. Impact of through-slice gradient optimization for dynamic slice-wise shimming in the cervico-thoracic spinal cord (in revision)".
+This repository includes a collection of scripts that were used to analyze the MRI data and generate figures for the article "Breheret et al. Impact of through-slice gradient optimization for dynamic slice-wise shimming in the cervico-thoracic spinal cord (in revision)".
 
 > [!NOTE]  
 > The bash scripts can only be run on Unix-based operating systems.
