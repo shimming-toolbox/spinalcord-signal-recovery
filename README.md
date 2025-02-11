@@ -13,9 +13,9 @@ Citation:
 Before using these scripts, you need to:
 1. Install dependencies
 * [Anaconda or Miniconda](https://www.anaconda.com/download/success)
-* [Shimming Toolbox's v1.1](https://github.com/shimming-toolbox/shimming-toolbox/releases/tag/1.1)
+* [Shimming Toolbox's v1.2](https://github.com/shimming-toolbox/shimming-toolbox/releases/tag/1.2)
 ```
-git clone -b 1.1 https://github.com/shimming-toolbox/shimming-toolbox/ ~/shimming-toolbox/
+git clone -b 1.2 https://github.com/shimming-toolbox/shimming-toolbox/ ~/shimming-toolbox/
 cd ~/shimming-toolbox/
 make install
 ```
