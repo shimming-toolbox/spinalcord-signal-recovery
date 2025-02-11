@@ -19,6 +19,11 @@ git clone -b v1.2 https://github.com/shimming-toolbox/shimming-toolbox/ ~/shimmi
 cd ~/shimming-toolbox/
 make install
 ```
+>[!NOTE]
+> If you already have Shimming Toolbox installed, please remove it from your directory before cloning the repository.
+```
+rm -rf ~/shimming-toolbox/
+```
 * [SCT v6.3](https://github.com/spinalcordtoolbox/spinalcordtoolbox/releases/tag/6.3)
 ```
 git clone -b 6.3 https://github.com/spinalcordtoolbox/spinalcordtoolbox/ ~/spinalcordtoolbox/
