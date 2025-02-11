@@ -155,7 +155,7 @@ do
         --anat $EPI_PATH \
         --mask $FNAME_MASK_SCT_OPT \
         --mask-dilation-kernel-size 5 \
-        --optimizer-criteria "grad" \
+        --optimizer-criteria "mse" \
         --weighting-signal-loss $w \
         --optimizer-method "least_squares" \
         --slices "auto" \
