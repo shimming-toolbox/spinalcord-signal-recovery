@@ -1,1 +1,8 @@
-Every scripts can be run normally if the data folder has been placed in the spinalcord-signal-recovery folder. 
+To run each of the figure scripts, simply change into this directory.
+```
+cd ./scripts/figure_scripts/
+```
+Now you can run each .py file separately using
+```
+python figure_#.py
+```
