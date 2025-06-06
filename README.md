@@ -1,6 +1,7 @@
 # spinalcord-signal-recovery
 
 This repository includes a collection of scripts that were used to analyze the MRI data and generate figures for the article "Breheret et al. Impact of through-slice gradient optimization for dynamic slice-wise shimming in the cervico-thoracic spinal cord".
+
 doi: https://doi.org/10.1002/mrm.30543
 
 > [!NOTE]  
